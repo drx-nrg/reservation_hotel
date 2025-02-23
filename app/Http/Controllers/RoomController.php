@@ -25,8 +25,7 @@ class RoomController extends Controller
             'status' => 'required'    
         ]);
         Room::create($request->all());
-        return redirect()->route('rooms.index')->with('success', 'Room created successfully.');
-
+        return redirect()->route('pages.admin.rooms.index')->with('success', 'Room created successfully.');
     }
 
     public function edit(Room $room) {
@@ -43,11 +42,11 @@ class RoomController extends Controller
         ]);
 
         $room->update($request->all());
-        return redirect()->route('rooms.index')->with('success', 'Room updated successfully.');
+        return redirect()->route('pages.admin.rooms.index')->with('success', 'Room updated successfully.');
     }
 
     public function destroy(Room $room) {
         $room->delete();
-        return redirect()->route('rooms.index')->with('success', 'Room deleted successfully.');
+        return redirect()->route('pages.admin.rooms.index')->with('success', 'Room deleted successfully.');
     }
 }
