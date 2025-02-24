@@ -1,6 +1,6 @@
 @extends('components.layouts.admin-layout')
 
-@section('title', 'List Reservation')
+@section('title', 'List Room')
 
 @section('main')
     <div class="container min-w-full min-h-screen flex justify-center">
@@ -27,7 +27,7 @@
                                         stroke-width="2" d="m1 9 4-4-4-4" />
                                 </svg>
                                 <a href="#"
-                                    class="ms-1 text-base font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 ">Roomsp</a>
+                                    class="ms-1 text-base font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 ">Rooms</a>
                             </div>
                         </li>
                     </ol>
@@ -116,7 +116,6 @@
                         <thead>
                             <tr class="border-b bg-gray-800 border-gray-700 text-white">
                                 <th class="p-3">ID</th>
-                                
                                 <th>Nomor Kamar</th>
                                 <th>Tipe Kamar</th>
                                 <th>Harga Per Malam</th>

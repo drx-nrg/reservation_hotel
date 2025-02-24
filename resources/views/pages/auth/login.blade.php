@@ -5,7 +5,8 @@
 
 
 
-<form class="max-w-sm mx-auto mt-21" action="{{route('login')}}" method="POST">
+<div class="container min-w-full flex justify-center items-center min-h-screen">
+  <form class="min-w-[300px]" action="{{route('login')}}" method="POST">
     @csrf
     <div class="mb-5">
       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-slate-900">Email</label>
@@ -15,15 +16,9 @@
       <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-slate-900">Password</label>
       <input type="password" id="password" name="password" class="shadow-xs bg-white border border-gray-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-white dark:border-slate-300 dark:placeholder-gray-400 dark:text-slate-900 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light" required />
     </div>
-   
-    <div class="flex items-start mb-5">
-      <div class="flex items-center h-5">
-        <input id="terms" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
-      </div>
-      <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-slate-900">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a></label>
-    </div>
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register new account</button>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Sign In</button>
   </form>
+</div>
   
 
 @endsection

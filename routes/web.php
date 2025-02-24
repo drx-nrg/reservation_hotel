@@ -9,7 +9,7 @@ use App\Http\Middleware\AdminMiddleware;
 Route::redirect('/admin', '/admin/dashboard', 301);
 
 Route::get('/admin/dashboard', function(){
-    return view('components.layouts.admin-layout');
+    return view('pages.admin.dashboard.index');
 });
 Route::get('/admin/dashboard/reservations/create', function(){
     return view('pages.admin.reservations.create');
@@ -37,3 +37,11 @@ Route::get('signin', function () {
     return view('pages.auth.login');
 });
 Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::post('register', [AuthController::class, 'register'])->name('register');
+Route::get('signup', function () {
+    return view('pages.auth.register');
+});
+
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');

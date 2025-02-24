@@ -55,13 +55,13 @@ class AuthController extends Controller
             'phone' => $request->phone
         ]);
 
-        return redirect()->route('login')->with('success', 'Registrasi berhasil! Silakan login.');
+        return redirect('signin')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 
     // Logout
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login');
+        return redirect('/');
     }
 }

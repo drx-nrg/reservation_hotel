@@ -119,8 +119,16 @@
             <a href="/about-us" class="text-sm/6 font-semibold text-gray-900">Tentang Kami</a>
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="/signin" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center">Masuk</a>
-            <a href="/signup" class="text-blue-600 bg-transparent border-2 border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:focus:ring-blue-800">Daftar</a>
+            @if(!auth()->check())
+              <a href="/signin" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center">Masuk</a>
+              <a href="/signup" class="text-blue-600 bg-transparent border-2 border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:focus:ring-blue-800">Daftar</a>
+            @else
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <button type="submit" class="cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center">Sign Out</button>
+            </form>
+              @endif
+
           </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->

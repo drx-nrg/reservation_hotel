@@ -1,6 +1,6 @@
 @extends('components.layouts.admin-layout')
 
-@section('title', 'Create Reservation')
+@section('title', 'Create Room')
 
 @section('main')
     <div class="container min-w-full min-h-screen flex justify-center">
@@ -27,7 +27,7 @@
                                         stroke-width="2" d="m1 9 4-4-4-4" />
                                 </svg>
                                 <a href="#"
-                                    class="ms-1 text-base font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 ">Reservations</a>
+                                    class="ms-1 text-base font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 ">Rooms</a>
                             </div>
                         </li>
                         <li>
@@ -44,7 +44,7 @@
                     </ol>
                 </nav>
 
-                <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Edit Reservations
+                <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Edit Rooms
                 </h2>
             </div>
             <div class="mt-5 flex lg:mt-0 lg:ml-4 hidden">

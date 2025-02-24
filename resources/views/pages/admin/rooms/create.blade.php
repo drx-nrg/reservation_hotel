@@ -1,6 +1,6 @@
 @extends('components.layouts.admin-layout')
 
-@section('title', 'Create Reservation')
+@section('title', 'Create Room')
 
 @section('main')
     <div class="container min-w-full min-h-screen flex justify-center">
@@ -27,7 +27,7 @@
                                         stroke-width="2" d="m1 9 4-4-4-4" />
                                 </svg>
                                 <a href="#"
-                                    class="ms-1 text-base font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 ">Reservations</a>
+                                    class="ms-1 text-base font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 ">Rooms</a>
                             </div>
                         </li>
                         <li>
@@ -44,7 +44,7 @@
                     </ol>
                 </nav>
 
-                <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Create Reservations
+                <h2 class="text-2xl/7 font-bold text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Create Rooms
                 </h2>
             </div>
             <div class="mt-5 flex lg:mt-0 lg:ml-4 hidden">
@@ -121,6 +121,15 @@
                     </div>
                 </div>
             </div>
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="text-red-600">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form class="w-full flex flex-col gap-3" action="{{route('rooms.store')}}"method='POST'>
                 @csrf
                 <div class="form-group w-full flex flex-col gap-2 mt-3">
@@ -142,6 +151,10 @@
                 <div class="form-group w-full flex flex-col gap-2 mt-3">
                     <label for="status" class="font-semibold text-slate-600">Status</label>
                     <input type="text" name="status" placeholder="Masukkan status" id="status" class="w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-gray-700 shadow-xs transition focus:border-white focus:ring-3 focus:ring-blue-400 focus:shadow-sm focus:shadow-blue-200 focus:outline-hidden">
+                </div>
+                <div class="form-group w-full flex flex-col gap-2 mt-3">
+                    <label for="picture" class="font-semibold text-slate-600">Gambar</label>
+                    <input type="file" name="picture" placeholder="Masukkan status" id="picture" class="file:px-3 file:py-2.5 file:bg-blue-100 file:text-blue-600 text-gray-800 file:mr-3 w-full rounded-md border border-slate-300 bg-white shadow-xs transition focus:border-white focus:ring-3 focus:ring-blue-400 focus:shadow-sm focus:shadow-blue-200 focus:outline-hidden">
                 </div>
                 <div class="form-group action flex flex-row gap-2 mt-3">
                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center">Submit</button>
